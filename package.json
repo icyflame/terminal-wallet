@@ -21,7 +21,12 @@
   },
   "files": [
     "index.js",
-    "cli.js"
+    "cli.js",
+    "close-account.js",
+    "export-module.js",
+    "file-module.js",
+    "setup-files.js",
+    "stats-module.js"
   ],
   "keywords": [
     "cli-app",
