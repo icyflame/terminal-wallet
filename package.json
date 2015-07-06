@@ -9,12 +9,15 @@
     "email": "kannan.siddharth12@gmail.com",
     "url": "icyflame.github.io"
   },
-  "bin": "cli.js",
+  "bin": {
+    "wallet": "cli.js"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "semistandard && mocha"
+    "test": "semistandard && mocha",
+    "postinstall": "node ./setup-files.js"
   },
   "files": [
     "index.js",
@@ -26,7 +29,14 @@
     ""
   ],
   "dependencies": {
-    "meow": "^3.3.0"
+    "cli-color": "^1.0.0",
+    "fast-csv": "^0.6.0",
+    "file-exists": "^0.1.1",
+    "log-symbols": "^1.0.2",
+    "meow": "^3.3.0",
+    "mkdirp": "^0.5.1",
+    "touch": "0.0.3",
+    "xdg-basedir": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "*",
