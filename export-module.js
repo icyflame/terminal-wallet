@@ -20,7 +20,7 @@ function exportToFile (exportFilepath, printToConsole) {
   fs.appendFileSync(exportFilepath, contents);
 
   printToConsole === undefined ?
-    console.log('\n' + logSymbols.success + ' Your file can be found at ' +
+    console.log('\n' + logSymbols.success + ' Your file can be found at :-\n' +
                 exportFilepath + '\n')
     : undefined;
 
