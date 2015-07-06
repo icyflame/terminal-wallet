@@ -6,8 +6,8 @@ function showStats () {
   var numberIsNan = require('number-is-nan');
   var clc = require('cli-color');
 
-  var expensesFilename = xdgBasedir.data + '/wallet/expenses.csv';
-  var stream = fs.createReadStream(expensesFilename);
+  var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
+  var stream = fs.createReadStream(expensesFilepath);
 
   var totalCredit = 0.0;
   var totalDebit = 0.0;

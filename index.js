@@ -29,10 +29,11 @@ module.exports = function (input, opts) {
     case 'stats':
       require('./stats-module.js')();
       break;
-    case 'balance':
+    case 'clear':
+      require('./close-account.js').closeAccount();
       break;
     case 'export':
-      require('./export-module.js')();
+      require('./export-module.js').exportToFile();
       break;
     default:
       console.log(clc.red('Not a valid option!'));

@@ -3,20 +3,20 @@ var delimiter = ',';
 
 function writeExpense (expense_object) {
   var xdgBasedir = require('xdg-basedir');
-  var filename = xdgBasedir.data + '/wallet/expenses.csv';
+  var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
   var fs = require('fs');
   var logSymbols = require('log-symbols');
-  var dateFormat = require('date-format');
+  var prettyDate = require('date-format').asString('yyyy-MM-dd', new Date());
 
   var record = [
-    dateFormat.asString('yyyy-MM-dd', new Date()),
+    prettyDate,
     expense_object.reason,
     expense_object.category,
     expense_object.credit,
     expense_object.debit
   ].join(delimiter);
 
-  fs.appendFile(filename, record + '\n', function (err) {
+  fs.appendFile(expensesFilepath, record + '\n', function (err) {
     if (err) {
       throw (err);
     } else {
