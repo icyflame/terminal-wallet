@@ -1,21 +1,15 @@
 'use strict';
 var delimiter = ',';
 
-function getPrettyDate () {
-  var now = new Date();
-  return now.getFullYear().toString() + '-' +
-         now.getMonth().toString() + '-' +
-         now.getDate().toString();
-}
-
 function writeExpense (expense_object) {
   var xdgBasedir = require('xdg-basedir');
   var filename = xdgBasedir.data + '/wallet/expenses.csv';
   var fs = require('fs');
   var logSymbols = require('log-symbols');
+  var dateFormat = require('date-format');
 
   var record = [
-    getPrettyDate(),
+    dateFormat.asString('yyyy-MM-dd', new Date()),
     expense_object.reason,
     expense_object.category,
     expense_object.credit,
