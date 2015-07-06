@@ -1,0 +1,35 @@
+{
+  "name": "terminal-wallet",
+  "version": "0.0.0",
+  "description": "My mind-blowing module",
+  "license": "MIT",
+  "repository": "icyflame/terminal-wallet",
+  "author": {
+    "name": "Siddharth Kannan",
+    "email": "kannan.siddharth12@gmail.com",
+    "url": "icyflame.github.io"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "semistandard && mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "meow": "^3.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "semistandard": "6.1.1"
+  }
+}
