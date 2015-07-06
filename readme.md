@@ -7,6 +7,15 @@
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 
 
+### Why?
+
+Not a long time ago, I used a Google Sheet to manage my wallet, and as a matter of
+fact, it got tedious soon. Opening the browser, waiting for the page to load,
+and not being able to update stuff when there's no connectivity, all of that
+has led me to write this small CLI application, that can be used by anyone to
+manage their wallet right from the terminal.
+
+
 ## CLI
 
 ```

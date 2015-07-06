@@ -26,7 +26,13 @@
   "keywords": [
     "cli-app",
     "cli",
-    ""
+    "wallet",
+    "manager",
+    "money",
+    "csv",
+    "files",
+    "spreadsheet",
+    "replacement"
   ],
   "dependencies": {
     "cli-color": "^1.0.0",
