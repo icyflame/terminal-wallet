@@ -1,7 +1,7 @@
 {
   "name": "terminal-wallet",
   "version": "0.0.0",
-  "description": "My mind-blowing module",
+  "description": "Manage your wallet, from the terminal",
   "license": "MIT",
   "repository": "icyflame/terminal-wallet",
   "author": {

@@ -6,18 +6,34 @@ var terminalWallet = require('./');
 var cli = meow({
   help: [
     'Usage',
-    '  $ terminal-wallet [input]',
+    '  wallet debit <value> <purchase details> [-c <category>]',
+    '  wallet credit <value> <source details> [-c <category>]',
+    '  wallet export',
+    '  wallet clear',
     '',
-    'Examples',
-    '  $ terminal-wallet',
-    '  unicorns & rainbows',
+    'Example',
+    "  wallet debit 10 'Breakfast, Coffee at Canteen' -c 'Food'",
     '',
-    '  $ terminal-wallet ponies',
-    '  ponies & rainbows',
+    '  ✔ Expense written to file!',
+    '',
+    "  wallet credit 2000 'Salary for July 2015' -c 'Salary'",
+    '',
+    '  ✔ Expense written to file!',
+    '',
+    '  wallet export',
+    '',
+    '  ✔ Your file can be found at',
+    '  /home/siddharth/.local/share/wallet/exported/export-2015-07-06.csv',
+    '',
+    '  wallet clear',
+    '',
+    '  ✔ Account closed. Expense details have been exported to :-',
+    '  /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv',
+    '  Prepared a clean slate, for the next accounting period.',
     '',
     'Options',
-    '  --foo  Lorem ipsum. Default: false'
-  ]
+    "  -c Category ; Default: '' ; Optional"
+  ].join('\n')
 });
 
 terminalWallet(cli.input, cli.flags);

@@ -1,26 +1,10 @@
 # terminal-wallet
 
-> My mind-blowing module
+> Manage your wallet, from the terminal
 
 [![Build Status](https://travis-ci.org/icyflame/terminal-wallet.svg?branch=master)](https://travis-ci.org/icyflame/terminal-wallet)
 
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
-
-## Install
-
-```
-$ npm install --save terminal-wallet
-```
-
-
-## Usage
-
-```js
-var terminalWallet = require('terminal-wallet');
-
-terminalWallet('unicorns');
-//=> unicorns & rainbows
-```
 
 
 ## CLI
@@ -29,42 +13,57 @@ terminalWallet('unicorns');
 $ npm install --global terminal-wallet
 ```
 ```
-$ terminal-wallet --help
+$ wallet --help
 
   Usage
-    terminal-wallet [input]
+    wallet debit <value> <purchase details> [-c <category>]
+    wallet credit <value> <source details> [-c <category>]
+    wallet export
+    wallet clear
 
   Example
-    terminal-wallet
-    unicorns & rainbows
+    wallet debit 10 'Breakfast, Coffee at Canteen' -c 'Food'
+    ✔ Expense written to file!
 
-    terminal-wallet ponies
-    ponies & rainbows
+    wallet credit 2000 'Salary for July 2015' -c 'Salary'
+    ✔ Expense written to file!
+
+    wallet export
+    ✔ Your file can be found at
+    /home/siddharth/.local/share/wallet/exported/export-2015-07-06.csv
+
+    wallet clear
+    ✔ Account closed. Expense details have been exported to :-
+    /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv
+    Prepared a clean slate, for the next accounting period.
 
   Options
-    --foo  Lorem ipsum. Default: false
+    -c Category ; Default: '' ; Optional
 ```
 
 
-## API
+## CLI
 
-### terminalWallet(input, [options])
+##### `wallet debit <value> <purchase details> [-c <category>]`
 
-#### input
+_`Made a purchase of <value> for <purchase details> under the category <category>`_  
+Add a debit entry to your account book.
 
-*Required*  
-Type: `string`
+##### `wallet credit <value> <source details> [-c <category>]`
 
-Lorem ipsum.
+`<value> credited to the wallet from <source details> under the category <category>`  
+Add a credit entry to your account book.
 
-#### options
+##### `wallet export`
 
-##### foo
+Export the current state of your account book to a timestamped file.  
+(Path to the file will be printed when the command completes execution)
 
-Type: `boolean`  
-Default: `false`
+##### `wallet clear`
 
-Lorem ipsum.
+Close the account for the last period, and start with a clean slate.  
+The expenses will be exported to a timestamped file, and can be retrieved.
+(Typically, This operation can be used at the end of each month, or any period that is convenient for the user.)
 
 
 ## License
