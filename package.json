@@ -38,6 +38,7 @@
     "mkdirp": "^0.5.1",
     "number-is-nan": "^1.0.0",
     "touch": "0.0.3",
+    "trash": "^1.4.1",
     "xdg-basedir": "^2.0.0"
   },
   "devDependencies": {
