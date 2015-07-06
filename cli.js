@@ -20,6 +20,4 @@ var cli = meow({
   ]
 });
 
-console.log(cli.input);
-console.log(cli.flags);
-console.log(terminalWallet(cli.input[0] || 'unicorns'));
+terminalWallet(cli.input, cli.flags);
