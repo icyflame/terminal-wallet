@@ -27,6 +27,7 @@ module.exports = function (input, opts) {
       require('./file-module.js').writeExpense(expense_object);
       break;
     case 'stats':
+      require('./stats-module.js')();
       break;
     case 'balance':
       break;
