@@ -32,7 +32,7 @@ $ wallet --help
 
   Example
     wallet debit 10 'Breakfast, Coffee at Canteen' -c 'Food'
-    
+
     ✔ Expense written to file!
 
     wallet credit 2000 'Salary for July 2015' -c 'Salary'
@@ -47,7 +47,7 @@ $ wallet --help
     wallet clear
 
     ✔ Account closed. Expense details have been exported to :-
-    /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv
+    /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv
     Prepared a clean slate, for the next accounting period.
 
   Options
