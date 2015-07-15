@@ -45,7 +45,7 @@ module.exports = function (input, opts) {
       break;
     case 'stash':
     case 'unstash':
-      require('./stash-module.js')(input[0], input[1]);
+      require('./stash-module.js').stashUnstash(input[0], input[1]);
       break;
     default:
       console.log(clc.red('Not a valid option!'));

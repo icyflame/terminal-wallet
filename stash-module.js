@@ -1,4 +1,4 @@
-function fixConfig (arg, value) {
+function stashUnstash (arg, value) {
   var clc = require('cli-color');
   var Configstore = require('configstore');
   var pkg = require('./package.json');
@@ -49,4 +49,4 @@ function fixConfig (arg, value) {
   }
 }
 
-module.exports = fixConfig;
+exports.stashUnstash = stashUnstash;
