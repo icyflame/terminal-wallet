@@ -39,6 +39,14 @@ $ wallet --help
 
     ✔ Expense written to file!
 
+    wallet stash 1000
+    # remove 1000 from the wallet and stash it away
+    # (safely) for later use
+
+    wallet unstash 500
+    # withdraw 500 from the stash and put it into the
+    # wallet for immediate use.
+
     wallet export
 
     ✔ Your file can be found at
@@ -77,6 +85,14 @@ Export the current state of your account book to a timestamped file.
 Close the account for the last period, and start with a clean slate.  
 The expenses will be exported to a timestamped file, and can be retrieved.
 (Typically, This operation can be used at the end of each month, or any period that is convenient for the user.)
+
+##### `wallet stash <value>`
+
+Remove money from wallet and stash it for later use.
+
+##### `wallet unstash <value>`
+
+Withdraw money from your stash, and credit it to the wallet.
 
 
 ## License
