@@ -7,22 +7,26 @@ function fixConfig (arg, value) {
   var conf = new Configstore(pkg.name);
 
   if (arg === 'stash') {
-      require('./stats-module.js').getBalance(function (err, balance) {
-        if (balance - value < 0) {
-          console.log(logSymbols.error + clc.red(" You don't have that much in your wallet!"));
-          console.log(clc.green('Credit into the wallet, before stashing away.'));
-        } else {
-          conf.set('stashed', conf.get('stashed') === undefined ? 0 : conf.get('stashed') + value);
-          var expense_object = {
-            reason: 'Credit into stash',
-            category: 'Stash',
-            credit: '',
-            debit: value
-          };
-          console.log(logSymbols.success + clc.green(' Stashed'));
-          require('./file-module.js').writeExpense(expense_object);
-        }
-      });
+    require('./stats-module.js').getBalance(function (err, balance) {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+      if (balance - value < 0) {
+        console.log(logSymbols.error + clc.red(" You don't have that much in your wallet!"));
+        console.log(clc.green('Credit into the wallet, before stashing away.'));
+      } else {
+        conf.set('stashed', conf.get('stashed') === undefined ? 0 : conf.get('stashed') + value);
+        var expense_object = {
+          reason: 'Credit into stash',
+          category: 'Stash',
+          credit: '',
+          debit: value
+        };
+        console.log(logSymbols.success + clc.green(' Stashed'));
+        require('./file-module.js').writeExpense(expense_object);
+      }
+    });
 
   } else if (arg === 'unstash') {
     if (conf.get('stashed')) {
