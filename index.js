@@ -11,8 +11,16 @@ module.exports = function (input, opts) {
 
   if (input[0] === 'credit' || input[0] === 'debit') {
     if (input.length < 3 || typeof input[1] !== 'number') {
-      console.log(clc.red('Given input not enough cannot be parsed.'));
+      console.log(clc.red('Given input not enough or cannot be parsed.'));
       console.log('Use commands of the form: ' + clc.green('wallet debit 10 "Coffee"'));
+      process.exit(1);
+    }
+  }
+
+  if (input[0] === 'stash' && input[0] === 'unstash') {
+    if (input.length < 2 || typeof input[1] !== 'number') {
+      console.log(clc.red('Given input not enough or cannot be parsed.'));
+      console.log('Use commands of the form: ' + clc.green('wallet stash 500'));
       process.exit(1);
     }
   }
@@ -27,13 +35,17 @@ module.exports = function (input, opts) {
       require('./file-module.js').writeExpense(expense_object);
       break;
     case 'stats':
-      require('./stats-module.js')();
+      require('./stats-module.js').showStats();
       break;
     case 'clear':
       require('./close-account.js').closeAccount();
       break;
     case 'export':
       require('./export-module.js').exportToFile();
+      break;
+    case 'stash':
+    case 'unstash':
+      require('./stash-module.js')(input[0], input[1]);
       break;
     default:
       console.log(clc.red('Not a valid option!'));
