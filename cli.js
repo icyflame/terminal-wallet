@@ -6,8 +6,8 @@ var terminalWallet = require('./');
 var cli = meow({
   help: [
     'Usage',
-    '  wallet debit <value> <purchase details> [-c <category>]',
-    '  wallet credit <value> <source details> [-c <category>]',
+    '  wallet debit <value> <purchase details> [-c <category>][-d <date in yyyy-mm-dd format>]',
+    '  wallet credit <value> <source details> [-c <category>][-d <date in yyyy-mm-dd format>]',
     '  wallet export',
     '  wallet clear',
     '',
