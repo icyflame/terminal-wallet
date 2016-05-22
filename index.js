@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function (input, opts) {
   var clc = require('cli-color');
+  var consts = require('./consts.js');
 
   var expenseObject = {
     reason: input[2],
@@ -9,6 +10,12 @@ module.exports = function (input, opts) {
     credit: '',
     debit: ''
   };
+
+  if (input[0] == 'file_path') {
+    // open the wallet file in `less`
+    console.log(consts.WALLET_FILE_PATH);
+    process.exit(1)
+  }
 
   if (input[0] === 'credit' || input[0] === 'debit') {
     if (input.length < 3 || typeof input[1] !== 'number') {
