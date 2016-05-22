@@ -10,7 +10,9 @@
     "url": "icyflame.github.io"
   },
   "bin": {
-    "wallet": "cli.js"
+    "wallet": "cli.js",
+    "wallet-open": "open.sh",
+    "wo": "open.sh"
   },
   "engines": {
     "node": ">=0.10.0"
