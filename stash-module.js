@@ -17,17 +17,16 @@ function stashUnstash (arg, value) {
         console.log(clc.green('Credit into the wallet, before stashing away.'));
       } else {
         conf.set('stashed', conf.get('stashed') === undefined ? 0 : conf.get('stashed') + value);
-        var expense_object = {
+        var expenseObject = {
           reason: 'Credit into stash',
           category: 'Stash',
           credit: '',
           debit: value
         };
         console.log(logSymbols.success + clc.green(' Stashed'));
-        require('./file-module.js').writeExpense(expense_object);
+        require('./file-module.js').writeExpense(expenseObject);
       }
     });
-
   } else if (arg === 'unstash') {
     if (conf.get('stashed')) {
       if ((conf.get('stashed') - value) < 0) {
@@ -35,13 +34,13 @@ function stashUnstash (arg, value) {
       } else {
         conf.set('stashed', conf.get('stashed') - value);
         console.log(logSymbols.success + clc.green(' Withdrawn from stash, credited into the wallet!'));
-        var expense_object = {
+        var expenseObject = {
           reason: 'Withdrawn from stash',
           category: 'Stash',
           credit: value,
           debit: ''
         };
-        require('./file-module.js').writeExpense(expense_object);
+        require('./file-module.js').writeExpense(expenseObject);
       }
     } else {
       console.log(logSymbols.error + clc.red(" You don't have that much in your stash!"));

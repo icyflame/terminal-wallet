@@ -1,7 +1,7 @@
 'use strict';
 var delimiter = ',';
 
-function writeExpense (expense_object) {
+function writeExpense (expenseObjectParam) {
   var xdgBasedir = require('xdg-basedir');
   var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
   var fs = require('fs');
@@ -10,10 +10,10 @@ function writeExpense (expense_object) {
 
   var record = [
     prettyDate,
-    expense_object.reason,
-    expense_object.category,
-    expense_object.credit,
-    expense_object.debit
+    expenseObjectParam.reason,
+    expenseObjectParam.category,
+    expenseObjectParam.credit,
+    expenseObjectParam.debit
   ].join(delimiter);
 
   fs.appendFile(expensesFilepath, record + '\n', function (err) {
