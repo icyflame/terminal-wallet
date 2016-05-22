@@ -39,14 +39,6 @@ $ wallet --help
 
     ✔ Expense written to file!
 
-    wallet stash 1000
-    # remove 1000 from the wallet and stash it away
-    # (safely) for later use
-
-    wallet unstash 500
-    # withdraw 500 from the stash and put it into the
-    # wallet for immediate use.
-
     wallet export
 
     ✔ Your file can be found at
@@ -58,8 +50,14 @@ $ wallet --help
     /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv
     Prepared a clean slate, for the next accounting period.
 
+    wallet-open # or just wo
+      This will open the wallet csv file in a less session, in a
+      in a reverse chronographic order, which is convenient for viewing
+      latest transactions
+
   Options
-    -c Category ; Default: '' ; Optional
+    -c Category   ; Default: ''          ; Optional
+    -d yyyy-mm-dd ; Default: Today's date; Optional
 ```
 
 
@@ -93,6 +91,15 @@ Remove money from wallet and stash it for later use.
 ##### `wallet unstash <value>`
 
 Withdraw money from your stash, and credit it to the wallet.
+
+##### `wallet file_path`
+
+The filepath of the CSV file in which all the expenses are being stored.
+
+##### `wallet-open` or just `wo`
+
+Open the CSV file where everything is stored in a reverse chronological order
+which is convenient for viewing latest credit / debit transactions.
 
 
 ## License

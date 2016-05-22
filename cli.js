@@ -31,8 +31,14 @@ var cli = meow({
     '  /home/siddharth/.local/share/wallet/closed/closed-2015-07-06.csv',
     '  Prepared a clean slate, for the next accounting period.',
     '',
+    '  wallet-open # or just wo',
+    '    This will open the wallet csv file in a less session, in a',
+    '    in a reverse chronographic order, which is convenient for viewing',
+    '    latest transactions',
+    '',
     'Options',
-    "  -c Category ; Default: '' ; Optional"
+    "  -c Category   ; Default: ''          ; Optional",
+    "  -d yyyy-mm-dd ; Default: Today's date; Optional"
   ].join('\n')
 });
 
