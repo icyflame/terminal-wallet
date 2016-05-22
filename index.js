@@ -2,7 +2,7 @@
 module.exports = function (input, opts) {
   var clc = require('cli-color');
 
-  var expense_object = {
+  var expenseObject = {
     reason: input[2],
     category: opts.c,
     credit: '',
@@ -27,12 +27,12 @@ module.exports = function (input, opts) {
 
   switch (input[0]) {
     case 'debit':
-      expense_object.debit = input[1];
-      require('./file-module.js').writeExpense(expense_object);
+      expenseObject.debit = input[1];
+      require('./file-module.js').writeExpense(expenseObject);
       break;
     case 'credit':
-      expense_object.credit = input[1];
-      require('./file-module.js').writeExpense(expense_object);
+      expenseObject.credit = input[1];
+      require('./file-module.js').writeExpense(expenseObject);
       break;
     case 'stats':
       require('./stats-module.js').showStats();
