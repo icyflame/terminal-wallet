@@ -11,10 +11,10 @@ module.exports = function (input, opts) {
     debit: ''
   };
 
-  if (input[0] == 'file_path') {
+  if (input[0] === 'file_path') {
     // open the wallet file in `less`
     console.log(consts.WALLET_FILE_PATH);
-    process.exit(1)
+    process.exit(1);
   }
 
   if (input[0] === 'credit' || input[0] === 'debit') {
