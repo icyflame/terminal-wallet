@@ -5,6 +5,7 @@ module.exports = function (input, opts) {
   var expenseObject = {
     reason: input[2],
     category: opts.c,
+    date: opts.d,
     credit: '',
     debit: ''
   };
