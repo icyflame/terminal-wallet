@@ -9,8 +9,18 @@ test('files are created', t => {
 	return fileExists(expensesFilepath);
 });
 
-test('bar', async t => {
-	const bar = Promise.resolve('bar');
+test('wrong date is not allowed', t => {
+	var module = require('./');
 
-	t.is(await bar, 'bar');
+	var input = ["credit", 3000, "From ATM"];
+	var opts = {};
+
+	module(input, opts);
+
+	input = ["debit", 50, "Coffee and mufin - one more time"];
+	opts = {d: "2015-5-5"};
+
+	t.throws(function() {
+		module(input, opts);
+	}, "Given date is not formatted as yyyy-mm-dd");
 });

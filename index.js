@@ -18,8 +18,7 @@ module.exports = function (input, opts) {
     var dateRe = /(\d{4})-(\d{2})-(\d{2})/;
     var matchObject = expenseObject.date.match(dateRe);
     if (!matchObject) {
-      console.log(clc.red('Given date does not match yyyy-MM-dd'));
-      process.exit(1);
+      throw new Error('Given date is not formatted as yyyy-mm-dd');
     }
   } else {
     expenseObject.date = require('date-format').asString('yyyy-MM-dd', new Date());

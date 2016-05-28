@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var meow = require('meow');
+var clc = require('cli-color');
 var terminalWallet = require('./');
 
 var cli = meow({
@@ -42,4 +43,9 @@ var cli = meow({
   ].join('\n')
 });
 
-terminalWallet(cli.input, cli.flags);
+try {
+  terminalWallet(cli.input, cli.flags);
+} catch (err) {
+  console.log(clc.red(err.message));
+  process.exit(1);
+}
