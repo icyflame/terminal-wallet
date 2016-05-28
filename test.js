@@ -1,13 +1,16 @@
-/* global it */
-'use strict';
-var assert = require('assert');
-// var terminalWallet = require('./');
-var fileExists = require('file-exists');
-var xdgBasedir = require('xdg-basedir');
+/* global t */
+import test from 'ava';
 
-var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
+test('files are created', t => {
+	var fileExists = require('file-exists');
+	var xdgBasedir = require('xdg-basedir');
+	var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
+	require('./setup-files.js');
+	return fileExists(expensesFilepath);
+});
 
-it('should create files', function () {
-  require('./setup-files.js');
-  assert.strictEqual(fileExists(expensesFilepath), true);
+test('bar', async t => {
+	const bar = Promise.resolve('bar');
+
+	t.is(await bar, 'bar');
 });

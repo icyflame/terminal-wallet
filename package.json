@@ -18,7 +18,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "semistandard && mocha",
+    "test": "semistandard && ava",
     "postinstall": "node ./setup-files.js"
   },
   "files": [
@@ -57,7 +57,13 @@
     "xdg-basedir": "^2.0.0"
   },
   "devDependencies": {
+    "ava": "^0.15.1",
     "mocha": "*",
     "semistandard": "*"
-  }
+  },
+	"semistandard": {
+		"ignore": [
+			"test.js"
+		]
+	}
 }

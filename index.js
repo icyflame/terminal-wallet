@@ -17,7 +17,7 @@ module.exports = function (input, opts) {
   if (expenseObject.date) {
     var dateRe = /(\d{4})-(\d{2})-(\d{2})/;
     var matchObject = expenseObject.date.match(dateRe);
-    if(!matchObject) {
+    if (!matchObject) {
       console.log(clc.red('Given date does not match yyyy-MM-dd'));
       process.exit(1);
     }
