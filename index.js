@@ -11,6 +11,22 @@ module.exports = function (input, opts) {
     debit: ''
   };
 
+  // validation step
+  // make sure that everything is as it should be before proceeding
+
+  if (expenseObject.date) {
+    var dateRe = /(\d{4})-(\d{2})-(\d{2})/;
+    var matchObject = expenseObject.date.match(dateRe);
+    if(!matchObject) {
+      console.log(clc.red('Given date does not match yyyy-MM-dd'));
+      process.exit(1);
+    }
+  } else {
+    expenseObject.date = require('date-format').asString('yyyy-MM-dd', new Date());
+  }
+
+  // end validation step
+
   if (input[0] === 'file_path') {
     // open the wallet file in `less`
     console.log(consts.WALLET_FILE_PATH);
