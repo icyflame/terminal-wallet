@@ -40,7 +40,7 @@ module.exports = function (input, opts) {
   if (input[0] === 'stash' || input[0] === 'unstash') {
     if (input.length < 2) {
       throw new Error(Consts.MSG_ERR_STASH_TRANS);
-    } else if (typeof input[1] !== number) {
+    } else if (typeof input[1] !== 'number') {
       throw new Error(Consts.MSG_ERR_STASH_TRANS);
     }
   }
