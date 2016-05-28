@@ -37,6 +37,10 @@ var cli = meow({
     '    in a reverse chronographic order, which is convenient for viewing',
     '    latest transactions',
     '',
+    '  wallet file_path',
+    '    Shows the file path of the wallet expenses file. Can be used to',
+    '    see it in your editor of choice. Editing it is not adviced',
+    '',
     'Options',
     "  -c Category   ; Default: ''          ; Optional",
     "  -d yyyy-mm-dd ; Default: Today's date; Optional"

@@ -1,7 +1,6 @@
 'use strict';
 module.exports = function (input, opts) {
-  var clc = require('cli-color');
-  var consts = require('./consts.js');
+  var Consts = require('./consts.js');
 
   var expenseObject = {
     reason: input[2],
@@ -18,7 +17,7 @@ module.exports = function (input, opts) {
     var dateRe = /(\d{4})-(\d{2})-(\d{2})/;
     var matchObject = expenseObject.date.match(dateRe);
     if (!matchObject) {
-      throw new Error('Given date is not formatted as yyyy-mm-dd');
+      throw new Error(Consts.MSG_INVALID_DATE);
     }
   } else {
     expenseObject.date = require('date-format').asString('yyyy-MM-dd', new Date());
@@ -28,23 +27,19 @@ module.exports = function (input, opts) {
 
   if (input[0] === 'file_path') {
     // open the wallet file in `less`
-    console.log(consts.WALLET_FILE_PATH);
-    process.exit(1);
+    console.log(Consts.WALLET_FILE_PATH);
+    process.exit(0);
   }
 
   if (input[0] === 'credit' || input[0] === 'debit') {
     if (input.length < 3 || typeof input[1] !== 'number') {
-      console.log(clc.red('Given input not enough or cannot be parsed.'));
-      console.log('Use commands of the form: ' + clc.green('wallet debit 10 "Coffee"'));
-      process.exit(1);
+      throw new Error(Consts.MSG_ERR_CREDIT_DEBIT_TRANS);
     }
   }
 
   if (input[0] === 'stash' && input[0] === 'unstash') {
     if (input.length < 2 || typeof input[1] !== 'number') {
-      console.log(clc.red('Given input not enough or cannot be parsed.'));
-      console.log('Use commands of the form: ' + clc.green('wallet stash 500'));
-      process.exit(1);
+      throw new Error(Consts.MSG_ERR_STASH_TRANS);
     }
   }
 
@@ -71,7 +66,6 @@ module.exports = function (input, opts) {
       require('./stash-module.js').stashUnstash(input[0], input[1]);
       break;
     default:
-      console.log(clc.red('Not a valid option!'));
-      process.exit(1);
+      throw new Error(Consts.MSG_INVALID_OPTION);
   }
 };
