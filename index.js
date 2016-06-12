@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function (input, opts) {
   var Consts = require('./consts.js');
+  var parseRelativeDate = Consts.parseRelativeDate;
 
   var expenseObject = {
     reason: input[2],
@@ -17,7 +18,12 @@ module.exports = function (input, opts) {
     var dateRe = /(\d{4})-(\d{2})-(\d{2})/;
     var matchObject = expenseObject.date.match(dateRe);
     if (!matchObject) {
-      throw new Error(Consts.MSG_INVALID_DATE);
+      var relativeDate = parseRelativeDate(expenseObject.date);
+      if (relativeDate[0]) {
+        expenseObject.date = require('date-format').asString('yyyy-MM-dd', relativeDate[1]);
+      } else {
+        throw new Error(Consts.MSG_INVALID_DATE);
+      }
     }
   } else {
     expenseObject.date = require('date-format').asString('yyyy-MM-dd', new Date());
