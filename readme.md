@@ -63,10 +63,12 @@ $ wallet --help
 
 ## CLI
 
-##### `wallet debit <value> <purchase details> [-c <category>]`
+##### `wallet debit <value> <purchase details> [-c <category>] [-d date]`
 
 _`Made a purchase of <value> for <purchase details> under the category <category>`_  
-Add a debit entry to your account book.
+Add a debit entry to your account book. Date can be written as, `yesterday`, `day before yesterday`,
+etc. Check [this list](https://github.com/icyflame/relative-date-reverse/blob/master/supported.md) for 
+supported date phrases.
 
 ##### `wallet credit <value> <source details> [-c <category>]`
 
