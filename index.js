@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function (input, opts) {
   var Consts = require('./consts.js');
-  var parseRelativeDate = Consts.parseRelativeDate;
+  var parseRelativeDate = require('relative-date-reverse');
 
   var expenseObject = {
     reason: input[2],
