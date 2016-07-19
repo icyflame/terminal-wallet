@@ -21,16 +21,6 @@
     "test": "semistandard && ava",
     "postinstall": "node ./setup-files.js"
   },
-  "files": [
-    "index.js",
-    "cli.js",
-    "close-account.js",
-    "export-module.js",
-    "file-module.js",
-    "setup-files.js",
-    "stats-module.js",
-    "stash-module.js"
-  ],
   "keywords": [
     "cli-app",
     "cli",
