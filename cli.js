@@ -6,7 +6,7 @@ var terminalWallet = require('./');
 
 var cli = meow({
   help: [
-    'Usage',
+  'Usage',
     '  wallet debit <value> <purchase details> [-c <category>][-d <date in yyyy-mm-dd format>]',
     '  wallet credit <value> <source details> [-c <category>][-d <date in yyyy-mm-dd format>]',
     '  wallet stats',
@@ -48,12 +48,15 @@ var cli = meow({
     '',
     '  wallet file_path',
     '    Shows the file path of the wallet expenses file. Can be used to',
-    '    see it in your editor of choice. Editing it is not adviced',
+    '    see it in your editor of choice. Editing it is not advised',
     '',
     'Options',
     "  -c Category   ; Default: ''          ; Optional",
     "  -d yyyy-mm-dd ; Default: Today's date; Optional"
-  ].join('\n')
+      ].join('\n')
+},
+alias: {
+  s: "stats"
 });
 
 try {
