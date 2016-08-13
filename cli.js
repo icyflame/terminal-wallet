@@ -6,7 +6,7 @@ var terminalWallet = require('./');
 
 var cli = meow({
   help: [
-  'Usage',
+    'Usage',
     '  wallet debit <value> <purchase details> [-c <category>][-d <date in yyyy-mm-dd format>]',
     '  wallet credit <value> <source details> [-c <category>][-d <date in yyyy-mm-dd format>]',
     '  wallet stats',
@@ -53,10 +53,7 @@ var cli = meow({
     'Options',
     "  -c Category   ; Default: ''          ; Optional",
     "  -d yyyy-mm-dd ; Default: Today's date; Optional"
-      ].join('\n')
-},
-alias: {
-  s: "stats"
+  ].join('\n')
 });
 
 try {
