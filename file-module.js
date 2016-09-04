@@ -6,7 +6,7 @@ function writeExpense (expenseObjectParam) {
   var expensesFilepath = xdgBasedir.data + '/wallet/expenses.csv';
   var fs = require('fs');
   var logSymbols = require('log-symbols');
-  var prettyDate = expenseObjectParam.date;
+  var prettyDate = expenseObjectParam.date || require('date-format').asString('yyyy-MM-dd', new Date());
 
   var record = [
     prettyDate,
