@@ -8,6 +8,8 @@
 
 [![node-4-and-above](https://img.shields.io/badge/node.js-%3E%204.0-brightgreen.svg)](https://nodejs.org/en/download/)
 
+Project page (for screenshots and explanation): [terminal-wallet](http://icyflame.github.io/terminal-wallet/)
+
 
 ### Why?
 
