@@ -1,24 +1,75 @@
 # terminal-wallet
 
-> Manage your wallet, from the terminal
+## Who?
 
-[![Build Status](https://travis-ci.org/icyflame/terminal-wallet.svg?branch=master)](https://travis-ci.org/icyflame/terminal-wallet)
+A wallet manager is something that everyone has to use. A lot of people prefer
+to use an
+[Android](https://play.google.com/store/apps/details?id=com.greyblue.expensetracker)
+[app](https://play.google.com/store/apps/details?id=com.daamitt.walnut.app) for
+expense tracking.
 
-[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+I spend most of my time on a Linux computer and a terminal is always open. It
+made perfect sense to me to maintain my daily expense tracking needs from within
+the terminal, with just text based commands. 
 
-[![node-4-and-above](https://img.shields.io/badge/node.js-%3E%204.0-brightgreen.svg)](https://nodejs.org/en/download/)
+## So?
 
+This module is my effort to solve that. It's nowhere near feature-complete, but
+the features that are in it work perfectly well. That's what I was going for.
+Eventually, as I get more free time, I will add some more features that I am
+tracking at the [issues
+dashboard](https://github.com/icyflame/terminal-wallet/issues) of the GitHub
+repository.
 
-### Why?
+It has some of the most common accounting capabilities, such as `debit`,
+`credit`, a special `stash` account where you can hold cash that isn't in your
+wallet right now and `category` based transaction.
 
-Not a long time ago, I used a Google Sheet to manage my wallet, and as a matter of
-fact, it got tedious soon. Opening the browser, waiting for the page to load,
-and not being able to update stuff when there's no connectivity, all of that
-has led me to write this small CLI application, that can be used by anyone to
-manage their wallet right from the terminal.
+At the end of the month, you can export your accounts to a CSV file which you
+can store / share with others / inspect using standard spreadsheet management
+tools (eg: LibreCalc or Excel) and start the next with a blank canvas.
 
+Start tracking your expenses and spend your money smartly, to make the most of
+what you earn. :smile:
 
-## CLI
+## Some screenshots!
+
+We will start from an empty accounting register, and make our way through a
+typical accounting cycle.
+
+### Get some money from the ATM!
+
+![img](./credit-basic.png)
+
+### Stash some of the money
+
+> You can't keep everything in your wallet
+
+![img](./stash-basic.png)
+
+### Have [Breakfast at Tiffany's](https://en.wikipedia.org/wiki/Breakfast_at_Tiffany%27s_(film))
+
+![img](./debit-basic.png)
+
+### Have a look at your statistics sometime during the cycle
+
+![img](./statistics.png)
+
+### Export your accounts at the end of the cycle
+
+![img](./export-basic.png)
+
+### BONUS: Debit and Credit with categories
+
+> This will let you analyse the exported CSV file with tools like Excel
+
+![img](./debit-category.png)
+
+***
+
+![img](./credit-category.png)
+
+## Demo and Help Text
 
 ```
 $ npm install --global terminal-wallet
@@ -63,7 +114,7 @@ $ wallet --help
 ```
 
 
-## CLI
+## Options
 
 ##### `wallet debit <value> <purchase details> [-c <category>] [-d date]`
 
