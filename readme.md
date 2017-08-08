@@ -30,7 +30,7 @@ can store / share with others / inspect using standard spreadsheet management
 tools (eg: LibreCalc or Excel) and start the next with a blank canvas.
 
 Start tracking your expenses and spend your money smartly, to make the most of
-what you earn. :smile:
+what you earn.
 
 ## Some screenshots!
 
@@ -160,3 +160,6 @@ which is convenient for viewing latest credit / debit transactions.
 ## License
 
 MIT © [Siddharth Kannan](http://icyflame.github.io)
+
+This project page uses the [Cayman](https://pages-themes.github.io/cayman/)
+theme.
