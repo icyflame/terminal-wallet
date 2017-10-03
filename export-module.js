@@ -18,10 +18,12 @@ function exportToFile (exportFilepath, printToConsole) {
   fs.writeFileSync(exportFilepath, 'Date,Remarks,Category,Credit,Debit\n');
   fs.appendFileSync(exportFilepath, contents);
 
-  (printToConsole === undefined)
-    ? console.log('\n' + logSymbols.success + ' Your file can be found at :-\n' +
-      exportFilepath + '\n')
-    : undefined;
+  if (printToConsole === undefined) {
+    console.log();
+    console.log(logSymbols.success + ' Your file can be found at :-');
+    console.log(exportFilepath);
+    console.log();
+  }
 }
 
 function getHeaders () {
